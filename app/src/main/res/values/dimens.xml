@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="tvTopMargin">8sp</dimen>
+    <dimen name="tvFont">20sp</dimen>
+    <dimen name="etFont">16sp</dimen>
+</resources>

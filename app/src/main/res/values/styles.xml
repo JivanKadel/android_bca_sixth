@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SpinnerDropdownItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:layout">@layout/spinner_dropdown_style</item>
+    </style>
+</resources>
