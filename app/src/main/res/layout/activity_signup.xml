@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/tvTopMargin"
-        android:text="TextView"
+        android:text="Enter Email"
         android:textColor="@color/bluePrimary"
         android:textSize="@dimen/tvFont"
         app:layout_constraintTop_toBottomOf="@+id/tiUsername" />
@@ -201,6 +202,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp"
+        android:background="@color/bluePrimary"
+        android:textColor="@color/white"
         android:text="Signup"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
