@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">My App</string>
+    <string name="login_label">Go to login</string>
+    <string name="sign_in_label">Sign in to continue</string>
     <string name="login_title"><u>Login Form</u></string>
     <string name="login_uname_label">Enter your Username</string>
-    <string name="sign_in_label">Sign in to continue</string>
     <string-array name="hobbies">
         <item>Dancing</item>
         <item>Swimming</item>
