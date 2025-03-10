@@ -5,19 +5,55 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ReceiverActivity">
 
     <TextView
         android:id="@+id/textViewName"
+        style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Name: "
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewPhone"
+        style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Phone: "
-        app:layout_constraintTop_toBottomOf="@id/textViewName"/>
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/textViewName" />
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter your Address Fam"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPhone" />
+
+    <Button
+        android:id="@+id/btnSubmitBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextAddress" />
+
+    <Button
+        android:id="@+id/btnShowDialogFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show dialog"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toEndOf="@id/btnSubmitBack"
+        app:layout_constraintTop_toBottomOf="@id/editTextAddress"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
