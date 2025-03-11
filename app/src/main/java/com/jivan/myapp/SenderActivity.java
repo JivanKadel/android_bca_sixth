@@ -2,6 +2,8 @@ package com.jivan.myapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -18,6 +21,7 @@ public class SenderActivity extends AppCompatActivity {
     Button btnSubmit;
     EditText etName, etPhone;
     TextView tvAddress;
+    Toolbar toolbar;
     private final int REQUEST_CODE = 100;
 
     @Override
@@ -31,6 +35,9 @@ public class SenderActivity extends AppCompatActivity {
         etPhone = findViewById(R.id.editTextPhone);
 
         tvAddress = findViewById(R.id.textViewAddress);
+
+        toolbar = findViewById(R.id.toolbarSender);
+        setSupportActionBar(toolbar);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -64,5 +71,12 @@ public class SenderActivity extends AppCompatActivity {
                 tvAddress.setText(address);
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
     }
 }

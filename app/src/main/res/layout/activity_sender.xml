@@ -8,6 +8,15 @@
     android:padding="16dp"
     tools:context=".SenderActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?attr/colorPrimary"
+        app:title="Login Page"
+        app:titleTextColor="@color/white"
+        />
 
     <EditText
         android:id="@+id/editTextName"
@@ -16,7 +25,8 @@
         android:ems="10"
         android:inputType="text"
         android:hint="Name"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/toolbarSender"
+        />
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -26,21 +36,22 @@
         android:inputType="phone"
         android:hint="Phone"
         app:layout_constraintTop_toBottomOf="@id/editTextName"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone"
+        android:text="Send"
+        />
     <TextView
         android:id="@+id/textViewAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Address: "
-        style="@style/TextAppearance.AppCompat.Large"
-        android:layout_marginTop="8dp"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toBottomOf="@id/editTextPhone"
-        />
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textViewAddress"
-        android:text="Send"
+        app:layout_constraintTop_toBottomOf="@id/btnSend"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
