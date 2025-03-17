@@ -1,7 +1,10 @@
 package com.jivan.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -14,6 +17,7 @@ public class ListViewActivity extends AppCompatActivity {
     String[] courses = {"BCA", "CSIT", "BBA", "BIM", "BBS", "BTECH", "MSc. CSIT", "MCA", "MBS", "MBA"};
 
     ListView listView;
+    Button btnGotoGrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,8 @@ public class ListViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_view);
 
         listView = findViewById(R.id.listViewCourses);
+
+        btnGotoGrid = findViewById(R.id.btnGotoGrid);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -36,5 +42,13 @@ public class ListViewActivity extends AppCompatActivity {
         super.onStart();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_activated_1, courses);
         listView.setAdapter(adapter);
+
+        btnGotoGrid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GridViewActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
