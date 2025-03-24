@@ -1,9 +1,13 @@
 package com.jivan.myapp;
 
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,9 +18,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.jivan.myapp.helpers.DBHandler;
 
+import java.util.ArrayList;
+
 public class SqliteDbActivity extends AppCompatActivity {
     EditText etCourseName, etCourseDuration;
     Button btnAddCourse;
+    DBHandler dbHandler;
+    ListView lvCourses;
 
 
     @Override
@@ -29,6 +37,9 @@ public class SqliteDbActivity extends AppCompatActivity {
         etCourseName = findViewById(R.id.etCourseName);
         etCourseDuration = findViewById(R.id.etCourseDuration);
         btnAddCourse = findViewById(R.id.btnAddCourse);
+        lvCourses = findViewById(R.id.lvCourses);
+
+        dbHandler = new DBHandler(getApplicationContext());
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -40,19 +51,41 @@ public class SqliteDbActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        loadSqliteData();
 
         btnAddCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (etCourseName.getText() != null && etCourseDuration.getText() != null) {
-                    try (DBHandler dbHandler = new DBHandler(getApplicationContext())) {
+                    try {
                         dbHandler.addNewCourse(etCourseName.getText().toString(), etCourseDuration.getText().toString());
                         etCourseName.getText().clear();
                         etCourseDuration.getText().clear();
                         Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
+                        loadSqliteData();
+                    } catch (Exception e) {
+                        Log.d("Error: ", e.toString());
                     }
                 }
             }
         });
+    }
+
+    // Load data from Sqlite Database
+    private void loadSqliteData() {
+        Cursor cursor = dbHandler.getAlCourses();
+        ArrayList<String> courseName = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                String name = cursor.getString(1);
+                courseName.add(name);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, courseName);
+        lvCourses.setAdapter(adapter);
     }
 }

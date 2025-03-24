@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enter course Name"
+        android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -27,7 +28,9 @@
         android:id="@+id/tvCourseDuration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter course Name"
+        android:text="Enter course Duration"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/etCourseName" />
 
     <EditText
@@ -45,6 +48,13 @@
         android:layout_marginTop="16dp"
         android:text="Add Course"
         app:layout_constraintTop_toBottomOf="@+id/etCourseDuration"
+        />
 
+    <ListView
+        android:id="@+id/lvCourses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toBottomOf="@id/btnAddCourse"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
