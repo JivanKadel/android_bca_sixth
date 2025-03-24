@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.Cursor;
 
 import androidx.annotation.Nullable;
 
@@ -45,5 +46,10 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
         db.close();
 
+    }
+
+    public Cursor getAlCourses() {
+        SQLiteDatabase db = getReadableDatabase();
+        return db.rawQuery("SELECT * from " + TABLE_NAME, null);
     }
 }
