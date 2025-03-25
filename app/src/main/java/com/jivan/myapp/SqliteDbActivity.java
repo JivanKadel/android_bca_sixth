@@ -16,13 +16,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.jivan.myapp.dialog.DeleteCourseDialogFragment;
 import com.jivan.myapp.helpers.DBHandler;
 
 import java.util.ArrayList;
 
 public class SqliteDbActivity extends AppCompatActivity {
     EditText etCourseName, etCourseDuration;
-    Button btnAddCourse;
+    Button btnAddCourse, btnDeleteCourse;
     DBHandler dbHandler;
     ListView lvCourses;
 
@@ -37,6 +38,7 @@ public class SqliteDbActivity extends AppCompatActivity {
         etCourseName = findViewById(R.id.etCourseName);
         etCourseDuration = findViewById(R.id.etCourseDuration);
         btnAddCourse = findViewById(R.id.btnAddCourse);
+        btnDeleteCourse = findViewById(R.id.btnDeleteCourse);
         lvCourses = findViewById(R.id.lvCourses);
 
         dbHandler = new DBHandler(getApplicationContext());
@@ -70,6 +72,18 @@ public class SqliteDbActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnDeleteCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create a new instance of the dialog fragment
+                DeleteCourseDialogFragment deleteCourseDialog = new DeleteCourseDialogFragment();
+
+                // Show the dialog using the fragment manager
+                deleteCourseDialog.show(getSupportFragmentManager(), "DeleteCourseDialog");
+            }
+        });
+
     }
 
     // Load data from Sqlite Database
