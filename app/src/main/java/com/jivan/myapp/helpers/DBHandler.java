@@ -52,4 +52,9 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery("SELECT * from " + TABLE_NAME, null);
     }
+
+    public int deleteCourse(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, ID_COL + "=?", new String[]{String.valueOf(id)});
+    }
 }
