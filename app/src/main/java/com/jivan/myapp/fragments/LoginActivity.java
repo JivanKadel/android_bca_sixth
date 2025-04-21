@@ -1,8 +1,10 @@
-package com.jivan.myapp;
+package com.jivan.myapp.fragments;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.jivan.myapp.R;
 
 public class LoginActivity extends AppCompatActivity {
 

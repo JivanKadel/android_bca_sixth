@@ -1,16 +1,17 @@
-package com.jivan.myapp;
+package com.jivan.myapp.fragments;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
- public class MyDialogFragment extends DialogFragment{
+import com.jivan.myapp.R;
+
+public class MyDialogFragment extends DialogFragment{
      private String title = "Confirmation", message = "Are you sure you want to continue?", positiveMessage = "Yes";
      public MyDialogFragment(String title, String message, String positiveMessage){
          this.title = title;

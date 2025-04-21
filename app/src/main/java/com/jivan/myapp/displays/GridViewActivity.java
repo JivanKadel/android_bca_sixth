@@ -1,4 +1,4 @@
-package com.jivan.myapp;
+package com.jivan.myapp.displays;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.jivan.myapp.R;
 
 public class GridViewActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.jivan.myapp;
+package com.jivan.myapp.crud;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.jivan.myapp.R;
 import com.jivan.myapp.dialog.DeleteCourseDialogFragment;
 import com.jivan.myapp.helpers.DBHandler;
 

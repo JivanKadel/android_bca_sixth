@@ -1,19 +1,19 @@
-package com.jivan.myapp;
+package com.jivan.myapp.intents;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.FragmentManager;
+
+import com.jivan.myapp.fragments.MyDialogFragment;
+import com.jivan.myapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

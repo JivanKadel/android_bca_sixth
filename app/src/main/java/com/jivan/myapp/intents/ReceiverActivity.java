@@ -1,4 +1,4 @@
-package com.jivan.myapp;
+package com.jivan.myapp.intents;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.jivan.myapp.fragments.MyDialogFragment;
+import com.jivan.myapp.R;
 
 public class ReceiverActivity extends AppCompatActivity {
 
